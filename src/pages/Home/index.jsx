@@ -50,13 +50,13 @@ const Home = () => {
       <Selector>
         <div className='grid gap-2'>
           <h1 className='text-center'>
-            Valor de la rifa $20.000 COP
+          Yamaha MT 09 2022
           </h1>
-          <p>
+          <p className='text-justify'>
           Cilindraje, 890 cc ; Peso (con aceite y tanque de gasolina lleno), 189 Kg ; Potencia, 117.3 Hp a 10000 rpm ; Torque, 93.0 Nm a 7000 rpm.
           </p>
-          <h2>
-          Yamaha MT 09 2022
+          <h2 className='text-center'>
+          Valor de la rifa $20.000 COP
           </h2>
         </div>
         <div className='progress-container'>
