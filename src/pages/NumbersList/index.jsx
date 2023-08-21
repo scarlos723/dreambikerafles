@@ -23,44 +23,53 @@ const NumberList = () => {
     const total = length * 20000
     return total.toLocaleString('es-CO')
   }
-  return (
-    <Container>
-      <div>
-        <h2>
-        Numeros disponibles
-        </h2>
-        <h3>
-        Selecciona los numeros que deseas comprar
-        </h3>
-      </div>
-      <ul className='list'>
-        {
-          numbers?.map((item, index) => (
-            <li key={index}>
-              <article className={`item ${item.selected ? 'active' : ''}`}
-                onClick={() => {
-                  const newNumbers = [...numbers]
-                  newNumbers[index].selected = !newNumbers[index].selected
-                  setNumbers(newNumbers)
-                }}
-              >
-                <h4>
-                  <HiOutlineTicket color="#EED202" />
-                  {item.number}
-                </h4>
-              </article>
-            </li>
-          ))
-        }
-      </ul>
-      <h3>Numeros que has seleccionado:     <span>
-        {numbers?.filter(item => item.selected).map(item => item.selected).length}
-      </span> </h3>
 
-      <ul className='list-selected'>
-        {
-          numbers?.map((item, index) =>
-            item.selected &&
+  function handlerClick (length) {
+    if (length >= 1) {
+      navigate('/formulario-pago')
+    } else {
+      alert('Debes seleccionar al menos un numero')
+    }
+  }
+  return (
+    <Container >
+      <section className='custom-container grid gap-10'>
+        <div>
+          <h2>
+        Numeros disponibles
+          </h2>
+          <h3>
+        Selecciona los numeros que deseas comprar
+          </h3>
+        </div>
+        <ul className='list'>
+          {
+            numbers?.map((item, index) => (
+              <li key={index}>
+                <article className={`item ${item.selected ? 'active' : ''}`}
+                  onClick={() => {
+                    const newNumbers = [...numbers]
+                    newNumbers[index].selected = !newNumbers[index].selected
+                    setNumbers(newNumbers)
+                  }}
+                >
+                  <h4>
+                    <HiOutlineTicket color="#EED202" />
+                    {item.number}
+                  </h4>
+                </article>
+              </li>
+            ))
+          }
+        </ul>
+        <h3>Numeros que has seleccionado:     <span>
+          {numbers?.filter(item => item.selected).length}
+        </span> </h3>
+
+        <ul className='list-selected'>
+          {
+            numbers?.map((item, index) =>
+              item.selected &&
               <li key={index}>
                 <article className={'item active'}
                   onClick={() => {
@@ -76,17 +85,18 @@ const NumberList = () => {
                 </article>
               </li>
 
-          )
-        }
-      </ul>
+            )
+          }
+        </ul>
 
-      <h2>  Total: $ {calcTotal(numbers?.filter(item => item.selected).map(item => item.selected).length) }</h2>
+        <h2>  Total: $ {calcTotal(numbers?.filter(item => item.selected).length) }</h2>
 
-      <button className='uppercase font-extrabold text-[#EED202]'
-        onClick={() => navigate('/formulario-pago')}
-      >
+        <button className='uppercase font-extrabold text-[#EED202]'
+          onClick={() => handlerClick(numbers?.filter(item => item.selected).length)}
+        >
           Ir a formulario de pago
-      </button>
+        </button>
+      </section>
     </Container>
   )
 }

@@ -27,12 +27,14 @@
 }
 
 @include responsiveTo($md){
-
+  .custom-container{
+    max-width: 600px;
+  }
 }
 
 @include responsiveTo($lg){
   .custom-container{
-    max-width: 960px;
+    max-width: 720px;
     box-sizing: border-box;
   }
 } 

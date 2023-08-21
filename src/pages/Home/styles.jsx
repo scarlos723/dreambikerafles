@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import ResponsiveTo from '../../utils/responsiveTo'
 export const SliderContainer = styled.section`
   /* position: fixed;
   width: 100vw;
@@ -15,6 +16,9 @@ export const Article = styled.article`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  ${ResponsiveTo('xl')}{
+    height: 600px;
+  }
 `
 export const Selector = styled.section`
   display: grid;
@@ -49,5 +53,11 @@ export const Selector = styled.section`
       background: linear-gradient(-90deg, #FFD600 0%,  #000000 100%);
       box-shadow: 4px 2px 4px rgba(0, 0, 0, 0.25);
     }
+  }
+  ${ResponsiveTo('md')}{
+    padding: 20px 40px;
+  }
+  ${ResponsiveTo('xl')}{
+    padding: 20px 80px;
   }
 `

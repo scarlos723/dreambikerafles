@@ -24,9 +24,51 @@ h1 {
 h2{
   font-size: 1.5rem;
 }
+h3{
+  font-size: 1.17rem;
+}
 p{
   font-size: 0.92rem;
 }
 .text-navbar{
+  font-size: 2rem;
   font-family: 'Rock Salt', cursive;
+}
+
+@include responsiveTo($md){
+  h1 {
+    font-size: 2.5rem;
+  }
+  h2{
+    font-size: 2rem;
+  }
+  h3{
+    font-size: 1.5rem;
+  }
+  p{
+    font-size: 1.17rem;
+  }
+}
+
+@include responsiveTo($lg){
+
+} 
+
+@include responsiveTo($xl){
+  h1 {
+    font-size: 3rem;
+  }
+  h2{
+    font-size: 2.5rem;
+  }
+  h3{
+    font-size: 2rem;
+  }
+  p{
+    font-size: 1.5rem;
+  }
+} 
+
+@include responsiveTo($xxl){
+  
 }

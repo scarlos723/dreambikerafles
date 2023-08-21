@@ -7,7 +7,7 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Pagination, EffectCoverflow } from 'swiper/modules'
+import { Pagination, EffectCoverflow, Autoplay } from 'swiper/modules'
 import { Article, Selector, SliderContainer } from './styles'
 import { useState } from 'react'
 import NumberList from '../NumbersList'
@@ -22,7 +22,7 @@ const LIST_IMAGES = [
 const Home = () => {
   const [showNumberList, setShowNumberList] = useState(false)
   return (
-    <main className='custom-container h-100vh'>
+    <main className='custom-container '>
       {
         showNumberList && <NumberList />
       }
@@ -40,7 +40,8 @@ const Home = () => {
             slideShadows: true
           }}
           pagination={true}
-          modules={[EffectCoverflow, Pagination]}
+          modules={[EffectCoverflow, Pagination, Autoplay]}
+          autoplay={{ delay: 3000 }}
           className={'mySwiper'}>
           {LIST_IMAGES.map((item, index) => (
             <SwiperSlide key={index}>

@@ -1,4 +1,5 @@
 import styled, { css, keyframes } from 'styled-components'
+import ResponsiveTo from '../../utils/responsiveTo'
 const slideIn = keyframes`
   from {
     transform: translateY(100%);
@@ -12,9 +13,7 @@ const animation = ({ time = '0.2s', type = 'ease-in' } = {}) => css`
 `
 
 export const Container = styled.div`
-  position: fixed;
-  display: grid;
-  gap: 12px;
+  position: absolute;
   padding: 12px;
   box-sizing: border-box;
   width: 100%;
@@ -52,13 +51,14 @@ export const Container = styled.div`
     display: grid ;
     gap: 8px;
     grid-template-columns: repeat(4, 1fr);
-    height: 300px;
+    border: 2px solid white;
+    box-sizing: border-box;
+    border-radius: 12px;
+    height: 210px;
     overflow-y: scroll;
   }
   .list-selected{
-    background-color: white;
-    border: 2px solid white;
-    border-radius: 12px;
+    background-color: white;  
     padding: 20px;
     height: 150px;
     .item{
@@ -66,6 +66,12 @@ export const Container = styled.div`
       h4{
         color: black;
       }
+    }
+  }
+  ${ResponsiveTo('md')}{
+    .list, .list-selected{
+      grid-template-columns: repeat(8, 1fr);
+      padding: 8px 20px;
     }
   }
 `

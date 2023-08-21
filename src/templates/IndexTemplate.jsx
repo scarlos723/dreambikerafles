@@ -2,7 +2,7 @@ import { Outlet } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 const IndexTemplate = () => {
   return (
-    <div>
+    <div className='w-[100vw]'>
       <Navbar />
       <Outlet />
     </div>
