@@ -1,0 +1,48 @@
+
+.color-container{
+  display: grid;
+  height: 500px;
+  div:nth-child(1){
+    background-color: $color-primary;
+  }
+  div:nth-child(2){
+    background-color: $color-secondary;
+  }
+  div:nth-child(3){
+    background-color: $color-accent;
+  }
+  div:nth-child(4){
+    background-color: $color-background;
+  }
+
+}
+
+.custom-container{
+  width: 100vw;
+  padding: 0em 1em 0em 1em;
+  margin-left:  auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  max-width: 100vw;
+}
+
+@include responsiveTo($md){
+
+}
+
+@include responsiveTo($lg){
+  .custom-container{
+    max-width: 960px;
+    box-sizing: border-box;
+  }
+} 
+
+@include responsiveTo($xl){
+  .custom-container{
+    max-width: 1180px;
+  }
+} 
+
+@include responsiveTo($xxl){
+  
+}

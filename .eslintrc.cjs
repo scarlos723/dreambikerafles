@@ -2,7 +2,8 @@ module.exports = {
   root: true,
   env: { browser: true, es2020: true },
   extends: [
-    'eslint:recommended',
+    //'eslint:recommended',
+    'standard',
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',
     'plugin:react-hooks/recommended',
@@ -16,5 +17,10 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    "indent": ["error", 2],
+    "react/self-closing-comp":"error",
+    "react/prop-types":"off",
+		"react/react-in-jsx-scope":"off",
+		"react/jsx-key": "off"
   },
 }

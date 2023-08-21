@@ -1,0 +1,32 @@
+
+a {
+  font-weight: 500;
+  color: $color-accent;
+  text-decoration: inherit;
+}
+a:hover {
+  color:$color-background;
+}
+h1,h2,h3,h4,h5,h6, p, small{
+  color: $color-background;
+  span{
+    color: $color-accent;
+  }
+}
+h1,h2,h3,h4,h5{
+  font-weight: bolder;
+  margin: 0;
+  line-height: 100%;
+}
+h1 {
+  font-size: 2rem;
+}
+h2{
+  font-size: 1.5rem;
+}
+p{
+  font-size: 0.92rem;
+}
+.text-navbar{
+  font-family: 'Rock Salt', cursive;
+}
