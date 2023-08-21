@@ -32,14 +32,14 @@ const NumberList = () => {
     }
   }
   return (
-    <Container >
-      <section className='custom-container grid gap-10'>
+    <main className='custom-container'>
+      <Container>
         <div>
           <h2>
-        Numeros disponibles
+    Numeros disponibles
           </h2>
           <h3>
-        Selecciona los numeros que deseas comprar
+    Selecciona los numeros que deseas comprar
           </h3>
         </div>
         <ul className='list'>
@@ -70,20 +70,20 @@ const NumberList = () => {
           {
             numbers?.map((item, index) =>
               item.selected &&
-              <li key={index}>
-                <article className={'item active'}
-                  onClick={() => {
-                    const newNumbers = [...numbers]
-                    newNumbers[index].selected = !newNumbers[index].selected
-                    setNumbers(newNumbers)
-                  }}
-                >
-                  <h4>
-                    <HiOutlineTicket/>
-                    {item.number}
-                  </h4>
-                </article>
-              </li>
+          <li key={index}>
+            <article className={'item active'}
+              onClick={() => {
+                const newNumbers = [...numbers]
+                newNumbers[index].selected = !newNumbers[index].selected
+                setNumbers(newNumbers)
+              }}
+            >
+              <h4>
+                <HiOutlineTicket/>
+                {item.number}
+              </h4>
+            </article>
+          </li>
 
             )
           }
@@ -94,10 +94,11 @@ const NumberList = () => {
         <button className='uppercase font-extrabold text-[#EED202]'
           onClick={() => handlerClick(numbers?.filter(item => item.selected).length)}
         >
-          Ir a formulario de pago
+      Ir a formulario de pago
         </button>
-      </section>
-    </Container>
+      </Container>
+    </main>
+
   )
 }
 

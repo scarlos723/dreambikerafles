@@ -12,13 +12,13 @@ const animation = ({ time = '0.2s', type = 'ease-in' } = {}) => css`
   animation: ${time}s ${slideIn} ${type};
 `
 
-export const Container = styled.div`
-  position: absolute;
+export const Container = styled.section`
   padding: 12px;
   box-sizing: border-box;
+  display: grid;
+  gap: 8px;
   width: 100%;
   height: 100vh;
-  z-index: 4;
   background-color: #302E30;
   top: 0;
   left: 0;
